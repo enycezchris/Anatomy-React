@@ -14,7 +14,7 @@ function HumanNavBar() {
       <nav>
         <ul className={styles.list}>
           <li>
-            <NavLink to="/cranium" className={handleNavLinkClassNames} end>
+            <NavLink to="cranium" className={handleNavLinkClassNames} end>
               Cranium
             </NavLink>
           </li>

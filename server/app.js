@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const setupDb = require("../database/data");
 const humanRoutes = require("../routes/human");
+const homeRoutes = require("../routes/home");
 
 app.use(
   cors({
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/human", humanRoutes);
+app.use("/home", homeRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello!");

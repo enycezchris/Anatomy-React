@@ -14,6 +14,10 @@ const Head = db.define("head", {
   },
   anteriorView: { type: STRING },
   posteriorView: { type: STRING },
+  defaultView: { type: STRING },
+  lateralView: { type: STRING },
+  inferiorView: { type: STRING },
+  superiorView: { type: STRING },
 });
 
 module.exports = Head;

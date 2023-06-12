@@ -36,8 +36,12 @@ const setupDb = async () => {
       name: cranium.name,
       description: cranium.description,
       specieId: humanSpecies.id,
+      defaultView: cranium.defaultView,
       anteriorView: cranium.anteriorView,
       posteriorView: cranium.posteriorView,
+      lateralView: cranium.lateralView,
+      inferiorView: cranium.inferiorView,
+      superiorView: cranium.superiorView,
     }),
   ]);
   const [humanBody] = await Promise.all([
