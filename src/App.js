@@ -13,6 +13,11 @@ import CraniumPosterior from "./components/CraniumPosterior";
 import CraniumLateral from "./components/CraniumLateral";
 import CraniumInferior from "./components/CraniumInferior";
 import CraniumSuperior from "./components/CraniumSuperior";
+import ThoraxLayout from "./components/ThoraxLayout";
+import Thorax, { handleLoadHumanThoraxData } from "./components/Thorax";
+import ThoraxAnterior from "./components/ThoraxAnterior";
+import ThoraxPosterior from "./components/ThoraxPosterior";
+import ThoraxLateral from "./components/ThoraxLateral";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +69,21 @@ const router = createBrowserRouter([
                 path: "superior",
                 element: <CraniumSuperior />,
               },
+            ],
+          },
+          {
+            path: "thorax",
+            element: <ThoraxLayout />,
+            id: "thorax-data",
+            loader: handleLoadHumanThoraxData,
+            children: [
+              {
+                index: true,
+                element: <Thorax />,
+              },
+              { path: "anterior", element: <ThoraxAnterior /> },
+              { path: "posterior", element: <ThoraxPosterior /> },
+              { path: "lateral", element: <ThoraxLateral /> },
             ],
           },
         ],

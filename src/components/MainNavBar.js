@@ -22,7 +22,7 @@ const MainNavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/human" className={handleNavLinkClassNames} end>
+            <NavLink to="/human" className={handleNavLinkClassNames}>
               {/* The end property is a boolean and sets whether a NavLink is active or not. If the current URL ends with "/products" then Products will be set to active. */}
               Human
             </NavLink>

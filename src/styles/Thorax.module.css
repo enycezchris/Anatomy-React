@@ -14,12 +14,30 @@
 }
 
 img {
-  width: 100%;
+  width: 80%;
   border-radius: 12px;
   margin-bottom: 30px;
 }
 
-.anatomy {
+.anterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.posterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.default {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.lateral {
   width: 50%;
   border-radius: 12px;
   margin-bottom: 30px;
