@@ -39,7 +39,11 @@ const Home = () => {
               <h3>{loadedContent.description.replaceAll(/\./g, ".\n")}</h3>
               <h4>{loadedContent.anatomy.replaceAll(/\./g, ".\n")}</h4>
               <h4>{loadedContent.physiology.replaceAll(/\./g, ".\n")}</h4>
-              <img src={loadedContent.image} alt="" />
+              <img
+                className={styles.anatomy}
+                src={loadedContent.image}
+                alt=""
+              />
             </main>
           );
         }}

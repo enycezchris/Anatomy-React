@@ -3,16 +3,17 @@ const Anatomy = require("./models/Anatomy");
 const Physiology = require("./models/Physiology");
 const Species = require("./models/Species");
 const Head = require("./models/Anatomy/Structure/Head");
-const Body = require("./models/Anatomy/Structure/Body");
+const Thorax = require("./models/Anatomy/Structure/Thorax");
 const CentralNervousSystem = require("./models/Anatomy/System/CentralNervousSystem");
 const cranium = require("../database/HumanData/cranium");
+const thorax = require("../database/HumanData/thorax");
 const body = require("../database/HumanData/body");
 const cns = require("../database/HumanData/cns");
 
 Species.hasMany(Anatomy);
 Species.hasMany(Physiology);
 Head.belongsTo(Species);
-Body.belongsTo(Species);
+Thorax.belongsTo(Species);
 CentralNervousSystem.belongsTo(Species);
 
 const setupDb = async () => {
@@ -44,10 +45,15 @@ const setupDb = async () => {
       superiorView: cranium.superiorView,
     }),
   ]);
-  const [humanBody] = await Promise.all([
-    Body.create({
-      description: body.description,
+  const [humanThorax] = await Promise.all([
+    Thorax.create({
+      name: thorax.name,
+      description: thorax.description,
       specieId: humanSpecies.id,
+      defaultView: thorax.defaultView,
+      anteriorView: thorax.anteriorView,
+      posteriorView: thorax.posteriorView,
+      lateralView: thorax.lateralView,
     }),
   ]);
 };

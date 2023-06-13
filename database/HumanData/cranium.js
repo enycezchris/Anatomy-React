@@ -1,5 +1,5 @@
 const cranium = {
-  name: "Human Cranium",
+  name: "Cranium",
   description:
     "The skull (also known as cranium) consists of 22 bones which can be subdivided into 8 cranial bones and 14 facial bones.The main function of the bones of the skull along with the surrounded meninges, is to provide protection and structure. Protection to the brain (cerebellum, cerebrum, brainstem) and orbits of the eyes. Structurally it provides an anchor for tendinous and muscular attachments of the muscles of the scalp and face. The skull also protects various nerves and vessels that feed and innervate the brain, facial muscles, and skin.",
   defaultView:

@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../../../index");
 const { INTEGER, TEXT, STRING } = Sequelize;
 
-const Body = db.define("body", {
+const Thorax = db.define("body", {
   id: {
     type: INTEGER,
     autoIncrement: true,
@@ -10,6 +10,10 @@ const Body = db.define("body", {
   },
   name: { type: STRING },
   description: { type: TEXT },
+  defaultView: { type: STRING },
+  anteriorView: { type: STRING },
+  posteriorView: { type: STRING },
+  lateralView: { type: STRING },
 });
 
-module.exports = Body;
+module.exports = Thorax;
