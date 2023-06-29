@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
-import axios from "axios";
 import { defer, Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Cranium.module.css";
+import axios from "axios";
+import styles from "../../styles/Thorax.module.css";
 
-const loadHumanCraniumData = async () => {
+const loadThoraxHomePageData = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/human/cranium");
+    const response = await axios.get("http://localhost:3001/human/thorax");
     const data = response.data;
     return data;
   } catch (error) {
@@ -13,28 +13,28 @@ const loadHumanCraniumData = async () => {
   }
 };
 
-export const handleLoadHumanCraniumData = async () => {
+export const handleLoadHumanThoraxData = async () => {
   return defer({
-    content: await loadHumanCraniumData(),
+    content: await loadThoraxHomePageData(),
   });
 };
 
-const Cranium = () => {
-  const data = useRouteLoaderData("cranium-data");
+const ThoraxHomePage = () => {
+  const data = useRouteLoaderData("thorax-data");
   const content = data.content;
+  const fallbackContent = `<p>Loading Data...</p>`;
   return (
-    <Suspense fallback={<p>Loading Data...</p>}>
+    <Suspense fallback={fallbackContent}>
       <Await resolve={content}>
         {(loadedContent) => {
-          console.log("loaded content", loadedContent);
           return (
             <main className={styles["main-container"]}>
               <h1>{loadedContent[0].name}</h1>
               <h3>{loadedContent[0].description.replaceAll(/\./g, ".\n")}</h3>
               <img
-                className={styles.default}
                 src={loadedContent[0].defaultView}
                 alt=""
+                className={styles.default}
               />
             </main>
           );
@@ -43,4 +43,5 @@ const Cranium = () => {
     </Suspense>
   );
 };
-export default Cranium;
+
+export default ThoraxHomePage;

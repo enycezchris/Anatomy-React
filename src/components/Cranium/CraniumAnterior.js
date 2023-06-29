@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Cranium.module.css";
+import styles from "../../styles/Cranium.module.css";
 
-const CraniumPosterior = () => {
+const CraniumAnterior = () => {
   const data = useRouteLoaderData("cranium-data");
   const content = data.content;
   console.log("content", content);
@@ -12,10 +12,10 @@ const CraniumPosterior = () => {
         {(loadedContent) => {
           return (
             <main className={styles["main-container"]}>
-              <h1>Posterior View of Cranium (Back View)</h1>
+              <h1>Anterior View of Cranium (Front View)</h1>
               <img
-                className={styles.posterior}
-                src={loadedContent[0].posteriorView}
+                className={styles.anterior}
+                src={loadedContent[0].anteriorView}
                 alt=""
               />
             </main>
@@ -26,4 +26,4 @@ const CraniumPosterior = () => {
   );
 };
 
-export default CraniumPosterior;
+export default CraniumAnterior;

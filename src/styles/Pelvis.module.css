@@ -1,0 +1,68 @@
+.main-container {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.main-container h1 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.main-container h3,
+.main-container h4 {
+  font-style: italic;
+}
+
+img {
+  width: 80%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.anterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.posterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.default {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.male {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.female {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.male-container {
+  margin: 50px 0 50px 200px;
+}
+
+.female-container {
+  margin: 50px 200px 50px 0;
+}
+
+.comparison-img {
+  width: 100%;
+  height: 80%;
+}

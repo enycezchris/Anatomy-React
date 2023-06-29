@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/CraniumNavBar.module.css";
+import styles from "../../styles/PelvisNavBar.module.css";
 
-function CraniumNavBar() {
+function MalePelvisNavBar() {
   // function to handle the NavLink className. NavLink className takes a function instead of string.
   const handleNavLinkClassNames = ({ isActive }) => {
     // className prop in NavLink takes an object argument with the property "isActive"
@@ -14,28 +14,13 @@ function CraniumNavBar() {
       <nav>
         <ul className={styles.list}>
           <li>
-            <NavLink to="anterior" className={handleNavLinkClassNames} end>
+            <NavLink to="anterior" className={handleNavLinkClassNames}>
               Anterior
             </NavLink>
           </li>
           <li>
-            <NavLink to="posterior" className={handleNavLinkClassNames} end>
+            <NavLink to="posterior" className={handleNavLinkClassNames}>
               Posterior
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="lateral" className={handleNavLinkClassNames} end>
-              Lateral
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="inferior" className={handleNavLinkClassNames} end>
-              Inferior
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="superior" className={handleNavLinkClassNames} end>
-              Superior
             </NavLink>
           </li>
         </ul>
@@ -44,4 +29,4 @@ function CraniumNavBar() {
   );
 }
 
-export default CraniumNavBar;
+export default MalePelvisNavBar;
