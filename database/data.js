@@ -4,17 +4,16 @@ const Physiology = require("./models/Physiology");
 const Species = require("./models/Species");
 const Head = require("./models/Anatomy/Structure/Head");
 const Thorax = require("./models/Anatomy/Structure/Thorax");
-const CentralNervousSystem = require("./models/Anatomy/System/CentralNervousSystem");
+const Pelvis = require("./models/Anatomy/Structure/Pelvis");
 const cranium = require("../database/HumanData/cranium");
 const thorax = require("../database/HumanData/thorax");
-const body = require("../database/HumanData/body");
-const cns = require("../database/HumanData/cns");
+const pelvis = require("../database/HumanData/pelvis");
 
 Species.hasMany(Anatomy);
 Species.hasMany(Physiology);
 Head.belongsTo(Species);
 Thorax.belongsTo(Species);
-CentralNervousSystem.belongsTo(Species);
+Pelvis.belongsTo(Species);
 
 const setupDb = async () => {
   await db.sync({ force: true });
@@ -28,9 +27,6 @@ const setupDb = async () => {
       name: humanSpecies.name,
       specieId: humanSpecies.id,
     }),
-  ]);
-  const [humanCNS] = await Promise.all([
-    CentralNervousSystem.create({ name: cns.name }),
   ]);
   const [humanCranium] = await Promise.all([
     Head.create({
@@ -54,6 +50,25 @@ const setupDb = async () => {
       anteriorView: thorax.anteriorView,
       posteriorView: thorax.posteriorView,
       lateralView: thorax.lateralView,
+    }),
+  ]);
+  const [humanPelvis] = await Promise.all([
+    Pelvis.create({
+      name: pelvis.name,
+      description: pelvis.description,
+      malePelvis: pelvis.malePelvis,
+      maleDescription: pelvis.maleDescription,
+      femalePelvis: pelvis.femalePelvis,
+      femaleDescription: pelvis.femaleDescription,
+      defaultView: pelvis.defaultView,
+      anteriorView: pelvis.anteriorView,
+      posteriorView: pelvis.posteriorView,
+      specieId: humanSpecies.id,
+      maleAnteriorView: pelvis.maleAnteriorView,
+      malePosteriorView: pelvis.malePosteriorView,
+      femaleAnteriorView: pelvis.femaleAnteriorView,
+      femalePosteriorView: pelvis.femalePosteriorView,
+      comparison: pelvis.comparison,
     }),
   ]);
 };
