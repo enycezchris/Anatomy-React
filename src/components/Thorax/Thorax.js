@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { defer, Await, useRouteLoaderData } from "react-router-dom";
 import axios from "axios";
-import styles from "../styles/Thorax.module.css";
+import styles from "../../styles/Thorax.module.css";
 
 const loadThoraxHomePageData = async () => {
   try {

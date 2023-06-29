@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/PelvisNavBar.module.css";
+import styles from "../../styles/PelvisNavBar.module.css";
 
 function PelvisNavBar() {
   // function to handle the NavLink className. NavLink className takes a function instead of string.

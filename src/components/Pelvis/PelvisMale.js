@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Thorax.module.css";
+import styles from "../../styles/Pelvis.module.css";
 
-const ThoraxAnterior = () => {
-  const data = useRouteLoaderData("thorax-data");
+const PelvisMale = () => {
+  const data = useRouteLoaderData("pelvis-data");
   const content = data.content;
   const fallbackContent = `<p>Loading Data...</p>`;
   return (
@@ -12,11 +12,14 @@ const ThoraxAnterior = () => {
         {(loadedContent) => {
           return (
             <main className={styles["main-container"]}>
-              <h1>Anterior View of Thorax (Front View)</h1>
+              <h1>Male Pelvic Girdle</h1>
+              <h3>
+                {loadedContent[0].maleDescription.replaceAll(/\./g, ".\n")}
+              </h3>
               <img
-                src={loadedContent[0].anteriorView}
+                className={styles.male}
+                src={loadedContent[0].malePelvis}
                 alt=""
-                className={styles.anterior}
               />
             </main>
           );
@@ -26,4 +29,4 @@ const ThoraxAnterior = () => {
   );
 };
 
-export default ThoraxAnterior;
+export default PelvisMale;

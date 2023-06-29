@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { defer, Await, useRouteLoaderData } from "react-router-dom";
 import axios from "axios";
-import styles from "../styles/Pelvis.module.css";
+import styles from "../../styles/Pelvis.module.css";
 
 const loadHumanPelvisData = async () => {
   try {

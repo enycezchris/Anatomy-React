@@ -1,22 +1,22 @@
 import React, { Suspense } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Cranium.module.css";
+import styles from "../../styles/Thorax.module.css";
 
-const CraniumAnterior = () => {
-  const data = useRouteLoaderData("cranium-data");
+const ThoraxAnterior = () => {
+  const data = useRouteLoaderData("thorax-data");
   const content = data.content;
-  console.log("content", content);
+  const fallbackContent = `<p>Loading Data...</p>`;
   return (
-    <Suspense fallback={<p>Loading data...</p>}>
+    <Suspense fallback={fallbackContent}>
       <Await resolve={content}>
         {(loadedContent) => {
           return (
             <main className={styles["main-container"]}>
-              <h1>Anterior View of Cranium (Front View)</h1>
+              <h1>Anterior View of Thorax (Front View)</h1>
               <img
-                className={styles.anterior}
                 src={loadedContent[0].anteriorView}
                 alt=""
+                className={styles.anterior}
               />
             </main>
           );
@@ -26,4 +26,4 @@ const CraniumAnterior = () => {
   );
 };
 
-export default CraniumAnterior;
+export default ThoraxAnterior;

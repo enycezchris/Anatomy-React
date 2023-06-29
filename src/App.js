@@ -6,27 +6,29 @@ import HumanLayout from "./components/HumanLayout";
 import HumanHomePage, {
   handleLoadHumanHomeContent,
 } from "./components/HumanHomePage";
-import Cranium, { handleLoadHumanCraniumData } from "./components/Cranium";
-import CraniumLayout from "./components/CraniumLayout";
-import CraniumAnterior from "./components/CraniumAnterior";
-import CraniumPosterior from "./components/CraniumPosterior";
-import CraniumLateral from "./components/CraniumLateral";
-import CraniumInferior from "./components/CraniumInferior";
-import CraniumSuperior from "./components/CraniumSuperior";
-import ThoraxLayout from "./components/ThoraxLayout";
-import Thorax, { handleLoadHumanThoraxData } from "./components/Thorax";
-import ThoraxAnterior from "./components/ThoraxAnterior";
-import ThoraxPosterior from "./components/ThoraxPosterior";
-import ThoraxLateral from "./components/ThoraxLateral";
-import PelvisLayout from "./components/PelvisLayout";
-import Pelvis, { handleLoadHumanPelvisData } from "./components/Pelvis";
-import PelvisAnterior from "./components/PelvisAnterior";
-import PelvisPosterior from "./components/PelvisPosterior";
-import PelvisMale from "./components/PelvisMale";
-import PelvisFemale from "./components/PelvisFemale";
-import PelvisMaleLayout from "./components/PelvisMaleLayout";
-import PelvisFemaleLayout from "./components/PelvisFemaleLayout";
-import PelvisComparison from "./components/PelvisComparison";
+import Cranium, {
+  handleLoadHumanCraniumData,
+} from "./components/Cranium/Cranium";
+import CraniumLayout from "./components/Cranium/CraniumLayout";
+import CraniumAnterior from "./components/Cranium/CraniumAnterior";
+import CraniumPosterior from "./components/Cranium/CraniumPosterior";
+import CraniumLateral from "./components/Cranium/CraniumLateral";
+import CraniumInferior from "./components/Cranium/CraniumInferior";
+import CraniumSuperior from "./components/Cranium/CraniumSuperior";
+import ThoraxLayout from "./components/Thorax/ThoraxLayout";
+import Thorax, { handleLoadHumanThoraxData } from "./components/Thorax/Thorax";
+import ThoraxAnterior from "./components/Thorax/ThoraxAnterior";
+import ThoraxPosterior from "./components/Thorax/ThoraxPosterior";
+import ThoraxLateral from "./components/Thorax/ThoraxLateral";
+import PelvisLayout from "./components/Pelvis/PelvisLayout";
+import Pelvis, { handleLoadHumanPelvisData } from "./components/Pelvis/Pelvis";
+import PelvisAnterior from "./components/Pelvis/PelvisAnterior";
+import PelvisPosterior from "./components/Pelvis/PelvisPosterior";
+import PelvisMale from "./components/Pelvis/PelvisMale";
+import PelvisFemale from "./components/Pelvis/PelvisFemale";
+import PelvisMaleLayout from "./components/Pelvis/PelvisMaleLayout";
+import PelvisFemaleLayout from "./components/Pelvis/PelvisFemaleLayout";
+import PelvisComparison from "./components/Pelvis/PelvisComparison";
 
 const router = createBrowserRouter([
   {

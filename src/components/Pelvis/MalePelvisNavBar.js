@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/PelvisNavBar.module.css";
+import styles from "../../styles/PelvisNavBar.module.css";
 
-function FemalePelvisNavBar() {
+function MalePelvisNavBar() {
   // function to handle the NavLink className. NavLink className takes a function instead of string.
   const handleNavLinkClassNames = ({ isActive }) => {
     // className prop in NavLink takes an object argument with the property "isActive"
@@ -29,4 +29,4 @@ function FemalePelvisNavBar() {
   );
 }
 
-export default FemalePelvisNavBar;
+export default MalePelvisNavBar;

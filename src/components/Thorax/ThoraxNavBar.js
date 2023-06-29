@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/PelvisNavBar.module.css";
+import styles from "../../styles/ThoraxNavBar.module.css";
 
-function MalePelvisNavBar() {
+function ThoraxNavBar() {
   // function to handle the NavLink className. NavLink className takes a function instead of string.
   const handleNavLinkClassNames = ({ isActive }) => {
     // className prop in NavLink takes an object argument with the property "isActive"
@@ -14,12 +14,12 @@ function MalePelvisNavBar() {
       <nav>
         <ul className={styles.list}>
           <li>
-            <NavLink to="anterior" className={handleNavLinkClassNames}>
+            <NavLink to="anterior" className={handleNavLinkClassNames} end>
               Anterior
             </NavLink>
           </li>
           <li>
-            <NavLink to="posterior" className={handleNavLinkClassNames}>
+            <NavLink to="posterior" className={handleNavLinkClassNames} end>
               Posterior
             </NavLink>
           </li>
@@ -29,4 +29,4 @@ function MalePelvisNavBar() {
   );
 }
 
-export default MalePelvisNavBar;
+export default ThoraxNavBar;

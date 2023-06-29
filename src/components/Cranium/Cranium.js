@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import axios from "axios";
 import { defer, Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Cranium.module.css";
+import styles from "../../styles/Cranium.module.css";
 
 const loadHumanCraniumData = async () => {
   try {

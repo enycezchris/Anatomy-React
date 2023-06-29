@@ -1,21 +1,22 @@
 import React, { Suspense } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Cranium.module.css";
+import styles from "../../styles/Cranium.module.css";
 
-const CraniumLateral = () => {
+const CraniumPosterior = () => {
   const data = useRouteLoaderData("cranium-data");
   const content = data.content;
+  console.log("content", content);
   return (
-    <Suspense fallback={<p>Loading Data...</p>}>
+    <Suspense fallback={<p>Loading data...</p>}>
       <Await resolve={content}>
         {(loadedContent) => {
           return (
             <main className={styles["main-container"]}>
-              <h1>Lateral View of Cranium (Side View)</h1>
+              <h1>Posterior View of Cranium (Back View)</h1>
               <img
-                className={styles.lateral}
+                className={styles.posterior}
+                src={loadedContent[0].posteriorView}
                 alt=""
-                src={loadedContent[0].lateralView}
               />
             </main>
           );
@@ -25,4 +26,4 @@ const CraniumLateral = () => {
   );
 };
 
-export default CraniumLateral;
+export default CraniumPosterior;

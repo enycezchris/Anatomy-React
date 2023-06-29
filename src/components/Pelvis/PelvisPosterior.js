@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Await, useLocation, useRouteLoaderData } from "react-router-dom";
-import styles from "../styles/Pelvis.module.css";
+import styles from "../../styles/Pelvis.module.css";
 
 const PelvisPosterior = () => {
   const data = useRouteLoaderData("pelvis-data");
