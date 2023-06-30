@@ -1,6 +1,7 @@
 const Head = require("../../database/models/Anatomy/Structure/Head");
 const Thorax = require("../../database/models/Anatomy/Structure/Thorax");
 const Pelvis = require("../../database/models/Anatomy/Structure/Pelvis");
+const Spine = require("../../database/models/Anatomy/Structure/Spine");
 
 exports.fetchHumanCraniumData = async (req, res, next) => {
   try {
@@ -29,8 +30,18 @@ exports.fetchHumanPelvisData = async (req, res, next) => {
     const humanPelvis = await Pelvis.findAll({
       where: { specieId: 1 },
     });
-    console.log("humanPelvis", humanPelvis);
     res.json(humanPelvis);
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.fetchHumanSpineData = async (req, res, next) => {
+  try {
+    const humanSpine = await Spine.findAll({
+      where: { specieId: 1 },
+    });
+    res.json(humanSpine);
   } catch (error) {
     next(error);
   }

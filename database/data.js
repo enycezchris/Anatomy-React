@@ -8,12 +8,15 @@ const Pelvis = require("./models/Anatomy/Structure/Pelvis");
 const cranium = require("../database/HumanData/cranium");
 const thorax = require("../database/HumanData/thorax");
 const pelvis = require("../database/HumanData/pelvis");
+const Spine = require("../database/models/Anatomy/Structure/Spine");
+const spine = require("../database/HumanData/spine");
 
 Species.hasMany(Anatomy);
 Species.hasMany(Physiology);
 Head.belongsTo(Species);
 Thorax.belongsTo(Species);
 Pelvis.belongsTo(Species);
+Spine.belongsTo(Species);
 
 const setupDb = async () => {
   await db.sync({ force: true });
@@ -69,6 +72,21 @@ const setupDb = async () => {
       femaleAnteriorView: pelvis.femaleAnteriorView,
       femalePosteriorView: pelvis.femalePosteriorView,
       comparison: pelvis.comparison,
+    }),
+  ]);
+  const [humanSpine] = await Promise.all([
+    Spine.create({
+      name: spine.name,
+      specieId: humanSpecies.id,
+      description: spine.description,
+      defaultView: spine.defaultView,
+      anteriorView: spine.anteriorView,
+      posteriorView: spine.posterior,
+      cervical: spine.cervical,
+      thoracic: spine.thoracic,
+      lumbar: spine.lumbar,
+      sacral: spine.sacral,
+      coccyx: spine.coccyx,
     }),
   ]);
 };

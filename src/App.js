@@ -29,6 +29,13 @@ import PelvisFemale from "./components/Pelvis/PelvisFemale";
 import PelvisMaleLayout from "./components/Pelvis/PelvisMaleLayout";
 import PelvisFemaleLayout from "./components/Pelvis/PelvisFemaleLayout";
 import PelvisComparison from "./components/Pelvis/PelvisComparison";
+import Spine, { handleLoadHumanSpineData } from "./components/Spine/Spine";
+import SpineLayout from "./components/Spine/SpineLayout";
+import Cervical from "./components/Spine/Cervical";
+import Thoracic from "./components/Spine/Thoracic";
+import Lumbar from "./components/Spine/Lumbar";
+import Sacral from "./components/Spine/Sacral";
+import Coccyx from "./components/Spine/Coccyx";
 
 const router = createBrowserRouter([
   {
@@ -143,6 +150,35 @@ const router = createBrowserRouter([
                     element: <PelvisPosterior />,
                   },
                 ],
+              },
+            ],
+          },
+          {
+            path: "spine",
+            element: <SpineLayout />,
+            id: "spine-data",
+            loader: handleLoadHumanSpineData,
+            children: [
+              { index: true, element: <Spine /> },
+              {
+                path: "cervical",
+                element: <Cervical />,
+              },
+              {
+                path: "thoracic",
+                element: <Thoracic />,
+              },
+              {
+                path: "Lumbar",
+                element: <Lumbar />,
+              },
+              {
+                path: "Sacral",
+                element: <Sacral />,
+              },
+              {
+                path: "Coccyx",
+                element: <Coccyx />,
               },
             ],
           },
