@@ -1,0 +1,74 @@
+.main-container {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.main-container h1 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.main-container h3,
+.main-container h4 {
+  font-style: italic;
+}
+
+img {
+  width: 80%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.cervical {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.thoracic {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.lumbar {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.sacral {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.coccyx {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.anterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.posterior {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.default {
+  width: 40%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.lateral {
+  width: 50%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}

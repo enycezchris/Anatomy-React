@@ -12,4 +12,6 @@ router.get("/thorax", humanController.fetchHumanThoraxData);
 
 router.get("/pelvis", humanController.fetchHumanPelvisData);
 
+router.get("/spine", humanController.fetchHumanSpineData);
+
 module.exports = router;
