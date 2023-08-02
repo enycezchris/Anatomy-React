@@ -5,7 +5,7 @@ import styles from "../../styles/Spine.module.css";
 
 const loadSpineData = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/human/spine");
+    const response = await axios.get("http://3.142.12.33:3001/human/spine");
     const data = response.data;
     return data;
   } catch (error) {

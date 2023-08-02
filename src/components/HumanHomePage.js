@@ -5,7 +5,7 @@ import styles from "../styles/HumanHomePage.module.css";
 
 const loadHumanHomeContent = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/home/human");
+    const response = await axios.get("http://3.142.12.33:3001/home/human");
     const data = response.data;
     return data;
   } catch (error) {

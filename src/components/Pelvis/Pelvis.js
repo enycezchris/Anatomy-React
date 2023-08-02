@@ -5,7 +5,7 @@ import styles from "../../styles/Pelvis.module.css";
 
 const loadHumanPelvisData = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/human/pelvis");
+    const response = await axios.get("http://3.142.12.33:3001/human/pelvis");
     const data = response.data;
     return data;
   } catch (error) {
