@@ -5,7 +5,7 @@ import { defer, useLoaderData, Await } from "react-router-dom";
 
 const loadHomeContent = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/home");
+    const response = await axios.get("http://3.142.12.33:3001/home");
     const data = response.data;
     return data;
   } catch (error) {

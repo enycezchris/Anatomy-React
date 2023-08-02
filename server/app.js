@@ -8,7 +8,12 @@ const homeRoutes = require("../routes/home");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://3.142.12.33",
+      "http://3.142.12.33:3001",
+    ],
     methods: ["GET", "POST", "OPTIONS"],
     preflightContinue: true,
     credentials: true,
